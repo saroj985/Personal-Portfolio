@@ -1,7 +1,7 @@
-import { Box, Container, Typography, Button } from '@mui/material'
-import { styled } from '@mui/material/styles'
-import { keyframes } from '@mui/system'
-import { useEffect } from 'react'
+import { Box, Container, Typography, Button } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { keyframes } from "@mui/system";
+import { useEffect } from "react";
 
 const fadeIn = keyframes`
   from {
@@ -12,60 +12,59 @@ const fadeIn = keyframes`
     opacity: 1;
     transform: translateY(0);
   }
-`
+`;
 
 const HeroSection = styled(Box)(({ theme }) => ({
-  minHeight: '100vh',
-  display: 'flex',
-  alignItems: 'center',
-  background: theme.palette.mode === 'light' 
-    ? '#ffffff'
-    : '#000000',
-  color: theme.palette.mode === 'light' ? '#000000' : '#ffffff',
+  minHeight: "100vh",
+  display: "flex",
+  alignItems: "center",
+  background: theme.palette.mode === "light" ? "#ffffff" : "#000000",
+  color: theme.palette.mode === "light" ? "#000000" : "#ffffff",
   paddingTop: theme.spacing(8),
-  position: 'relative',
-  overflow: 'hidden',
-  '&::before': {
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
     content: '""',
-    position: 'absolute',
+    position: "absolute",
     top: 0,
     left: 0,
     right: 0,
     bottom: 0,
-    background: theme.palette.mode === 'light'
-      ? 'radial-gradient(circle at 50% 50%, rgba(0,0,0,0.02) 0%, transparent 50%)'
-      : 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)',
+    background:
+      theme.palette.mode === "light"
+        ? "radial-gradient(circle at 50% 50%, rgba(0,0,0,0.02) 0%, transparent 50%)"
+        : "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)",
     animation: `${fadeIn} 2s ease-out`,
   },
-}))
+}));
 
 const AnimatedTypography = styled(Typography)({
   animation: `${fadeIn} 1s ease-out`,
-})
+});
 
 const ModernButton = styled(Button)(({ theme }) => ({
-  borderRadius: '980px',
-  padding: '12px 24px',
-  textTransform: 'none',
-  fontSize: '1.1rem',
+  borderRadius: "980px",
+  padding: "12px 24px",
+  textTransform: "none",
+  fontSize: "1.1rem",
   fontWeight: 400,
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    transform: 'scale(1.02)',
-  }
-}))
+  transition: "all 0.3s ease",
+  "&:hover": {
+    transform: "scale(1.02)",
+  },
+}));
 
 const Hero = () => {
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   return (
     <HeroSection>
@@ -75,10 +74,10 @@ const Hero = () => {
           gutterBottom
           sx={{
             fontWeight: 600,
-            textAlign: 'center',
+            textAlign: "center",
             mb: 2,
-            fontSize: { xs: '3rem', md: '5rem' },
-            letterSpacing: '-0.02em',
+            fontSize: { xs: "3rem", md: "5rem" },
+            letterSpacing: "-0.02em",
             lineHeight: 1.1,
           }}
         >
@@ -88,12 +87,15 @@ const Hero = () => {
           variant="h2"
           gutterBottom
           sx={{
-            textAlign: 'center',
+            textAlign: "center",
             mb: 4,
             fontWeight: 400,
-            color: (theme) => theme.palette.mode === 'light' ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.8)',
-            fontSize: { xs: '1.75rem', md: '2.5rem' },
-            letterSpacing: '-0.01em',
+            color: (theme) =>
+              theme.palette.mode === "light"
+                ? "rgba(0,0,0,0.8)"
+                : "rgba(255,255,255,0.8)",
+            fontSize: { xs: "1.75rem", md: "2.5rem" },
+            letterSpacing: "-0.01em",
           }}
         >
           Full Stack Developer
@@ -101,38 +103,44 @@ const Hero = () => {
         <AnimatedTypography
           variant="h6"
           sx={{
-            textAlign: 'center',
+            textAlign: "center",
             mb: 8,
-            color: (theme) => theme.palette.mode === 'light' ? 'rgba(0,0,0,0.6)' : 'rgba(255,255,255,0.6)',
-            maxWidth: '700px',
-            mx: 'auto',
+            color: (theme) =>
+              theme.palette.mode === "light"
+                ? "rgba(0,0,0,0.6)"
+                : "rgba(255,255,255,0.6)",
+            maxWidth: "700px",
+            mx: "auto",
             lineHeight: 1.5,
-            fontSize: '1.25rem',
+            fontSize: "1.25rem",
             fontWeight: 400,
-            letterSpacing: '0.01em',
+            letterSpacing: "0.01em",
           }}
         >
-          Passionate about developing efficient backend systems and working in collaborative environments.
-          Specializing in building scalable applications with modern technologies.
+          Passionate about developing efficient backend systems and working in
+          collaborative environments. Specializing in building scalable
+          applications with modern technologies.
         </AnimatedTypography>
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: 'center',
+            display: "flex",
+            justifyContent: "center",
             gap: 3,
-            flexWrap: 'wrap',
+            flexWrap: "wrap",
           }}
         >
           <ModernButton
             variant="contained"
             color="primary"
             size="large"
-            onClick={() => scrollToSection('projects')}
+            onClick={() => scrollToSection("projects")}
             sx={{
-              background: (theme) => theme.palette.mode === 'light' ? '#0071e3' : '#2997ff',
-              '&:hover': {
-                background: (theme) => theme.palette.mode === 'light' ? '#0077ed' : '#2d9dff',
-              }
+              background: (theme) =>
+                theme.palette.mode === "light" ? "#0071e3" : "#2997ff",
+              "&:hover": {
+                background: (theme) =>
+                  theme.palette.mode === "light" ? "#0077ed" : "#2d9dff",
+              },
             }}
           >
             View My Work
@@ -141,13 +149,16 @@ const Hero = () => {
             variant="outlined"
             color="inherit"
             size="large"
-            onClick={() => scrollToSection('contact')}
+            onClick={() => scrollToSection("contact")}
             sx={{
               borderWidth: 1,
-              '&:hover': {
+              "&:hover": {
                 borderWidth: 1,
-                background: (theme) => theme.palette.mode === 'light' ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.04)',
-              }
+                background: (theme) =>
+                  theme.palette.mode === "light"
+                    ? "rgba(0,0,0,0.04)"
+                    : "rgba(255,255,255,0.04)",
+              },
             }}
           >
             Contact Me
@@ -155,7 +166,7 @@ const Hero = () => {
         </Box>
       </Container>
     </HeroSection>
-  )
-}
+  );
+};
 
-export default Hero 
+export default Hero;
