@@ -6,15 +6,15 @@ import { useTheme } from '@mui/material/styles'
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   background: theme.palette.mode === 'light'
-    ? 'rgba(255, 255, 255, 0.8)'
-    : 'rgba(18, 18, 18, 0.8)',
-  backdropFilter: 'blur(8px)',
+    ? 'linear-gradient(90deg, #10b981 0%, #3b82f6 100%)'
+    : 'linear-gradient(90deg, #059669 0%, #2563eb 100%)',
+  backdropFilter: 'none',
   boxShadow: 'none',
-  borderBottom: `1px solid ${theme.palette.mode === 'light' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)'}`,
+  borderBottom: `1px solid ${theme.palette.mode === 'light' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(255, 255, 255, 0.1)'}`,
 }))
 
 const NavButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.mode === 'light' ? theme.palette.text.primary : theme.palette.text.primary,
+  color: '#ffffff',
   margin: theme.spacing(0, 1),
   position: 'relative',
   '&::after': {
@@ -24,7 +24,7 @@ const NavButton = styled(Button)(({ theme }) => ({
     height: '2px',
     bottom: 0,
     left: '50%',
-    background: theme.palette.primary.main,
+    background: '#ffffff',
     transition: 'all 0.3s ease',
     transform: 'translateX(-50%)',
   },
